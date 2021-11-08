@@ -7,6 +7,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button{
+  border-radius: 10px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -96,6 +100,7 @@ align-items: center;
 
 div.product-list, div.product-add{
   margin-top: 20px;
+  background-color: rgb(255, 174, 160);
 }
 
 /* Product item */
@@ -104,13 +109,15 @@ div.product-item img{
   width: 80px;
   margin-left: auto;
   margin-right: auto;
+  border-radius: 10px;
 }
 
 div.product-item{
   display: flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid rgb(240, 196, 196);
+  border: 2px solid rgb(0, 0, 0);
+  background:rgb(248, 215, 154)
 }
 
 div.product-item button{
@@ -121,8 +128,14 @@ div.product-item button{
 
 
 /* CART................................... */
+div.cart{
+  background: rgb(212, 202, 248);
+}
+
 div.cart img{
   width: 30%;
+  border-radius: 100px;
+
 }
 
 div.cart-top{
@@ -149,6 +162,8 @@ div.item-container{
 div.first-product{
   display: grid;
   grid-template-columns: 2.5fr 1.5fr;
+  background-color: whitesmoke;
+  min-height: 42vw;
 }
 
 div.total-cost{
@@ -160,6 +175,7 @@ div.total-cost{
 div.cart-item{
   display: flex;
   justify-content: space-between;
+  background-color: rgb(253, 227, 169);
 }
 
 div.cart-item button{
@@ -196,4 +212,8 @@ div.change-quantity{
 div.up-down{
   display: flex;
   flex-direction: column;
+}
+
+div.add-button img{
+  border-radius: 50%;
 }
