@@ -89,6 +89,10 @@ function Product(props){
             <div className="add-button">
                 <img src="https://booster.io/wp-content/uploads/product-add-to-cart-e1438362099361.png" alt=""/>            
                 <button onClick={handleAddProduct} className="product-add">Add a Product</button>
+                <ul>
+                    <li>Product name should be unique</li>
+                    <li>Product cost should be a number</li>
+                </ul>
             </div>
             
             <div className={`modal-bg ${isAddProduct ? "bg-active" : ""} `}>
