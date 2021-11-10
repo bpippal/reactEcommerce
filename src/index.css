@@ -217,3 +217,64 @@ div.up-down{
 div.add-button img{
   border-radius: 50%;
 }
+
+@media screen and (max-width: 768px){
+  div.top-nav{
+    width: 100vw;
+    font-size: large;
+  }
+
+  div.top-nav img{
+    width: 15%;
+  }
+  
+  div.first-product{
+    display: block;
+  }
+  
+  div.add-button img{
+    width: 20%;
+    height: 10%;
+    margin: 5px;
+  }
+
+  div.add-button{
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+  }
+  
+  .modal{
+  background-color: white;
+  width: 50%;
+  height: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  }
+  
+  div.modal-button{
+    display: flex;
+    font-size: xx-small;
+  }
+
+  div.product-item{
+    width: 100px;
+    font-size: small;
+    height: auto;
+  }
+
+  div.product-item img{
+    width: 60%;
+  }
+
+  div.cart{
+    font-size: small;
+    margin-top: 20px;
+  }
+
+  div.cart img{
+    width: 20%;
+  }
+
+}

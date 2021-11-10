@@ -13,6 +13,11 @@ function Product(props){
     //Cart items are stored in Cart array
     const [cartArr, setCartArr] = useState([]);
 
+    //Product name and cost    
+    const [inpName, setInpName] = useState("");
+    const [inpCost, setInpCost] = useState("");
+
+
     //Open the modal
     function handleAddProduct(){
         setAddProduct(true);
@@ -26,24 +31,16 @@ function Product(props){
     //Add product to prodArray
     function handleAddToList(){
 
-        const inpNameNode = document.querySelector("input.name");
-        const inpCostNode = document.querySelector("input.cost");
-
-        const inpName = inpNameNode.value;
-        const inpCost = inpCostNode.value;
-
         const newObj = {
             name:inpName,
             cost:inpCost
         }
 
-        // prodArr.push(newObj);
-        // prodArr.push(newObj);
         setProAdd([...prodArr, newObj]);
 
+        setInpCost("");
+        setInpName("");
 
-        inpCostNode.value = "";
-        inpNameNode.value = "";
         setAddProduct(false);
     }
 
@@ -95,28 +92,37 @@ function Product(props){
                 </ul>
             </div>
             
-            <div className={`modal-bg ${isAddProduct ? "bg-active" : ""} `}>
+
+            {/* Conditional Rendering */}
+            {
+                isAddProduct ? <div className={`modal-bg ${isAddProduct ? "bg-active" : ""} `}>
                 <div className="modal box">
                     <div className="modal-item">
                         
                     <label>Product name</label>
-                    <input id="name" className="name" placeholder="Enter Product name"/>
+                    <input value={inpName} onChange={(event) => setInpName(event.target.value)} id="name" className="name" placeholder="Enter Product name"/>
                     </div>
 
                     <div className="modal-item">
                     <label>Product cost</label>
-                    <input id="cost" className="cost" placeholder="Enter Product cost"/>
+                    <input value={inpCost} onChange={(event) => setInpCost(event.target.value)} id="cost" className="cost" placeholder="Enter Product cost"/>
                     </div>
 
                     <div className="modal-button">
                         <button onClick={handleAddToList} >Add to List</button>
                         <button onClick={closeModal}>Close</button>
                     </div>
-
-  
                 </div>
 
             </div>
+
+            : <div className={`modal-bg ${isAddProduct ? "bg-active" : ""} `}>
+            
+
+        </div>
+        }
+
+            
 
             </div>
 
